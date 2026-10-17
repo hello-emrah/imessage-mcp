@@ -15,7 +15,7 @@ const HANDLERS = Object.assign({}, ...MODULES.map((m) => m.handlers));
 
 // ─── Server ─────────────────────────────────────────────────────────────────
 const server = new Server(
-  { name: 'domovoi-mcp', version: '0.1.0' },
+  { name: 'imessage-mcp', version: '0.1.0' },
   { capabilities: { tools: {} } }
 );
 
@@ -37,4 +37,4 @@ server.setRequestHandler(CallToolRequestSchema, async (req) => {
 
 const transport = new StdioServerTransport();
 await server.connect(transport);
-console.error(`domovoi ready (${TOOLS.length} tools: messages, contacts)`);
+console.error(`imessage ready (${TOOLS.length} tools: messages, contacts)`);

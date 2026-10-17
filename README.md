@@ -1,12 +1,14 @@
 <div align="center">
 
-<img src="assets/logo.png" alt="Domovoi" width="160" />
+<img src="assets/logo.png" alt="iMessage MCP" width="160" />
 
-# Domovoi
+# iMessage MCP
 
-**The house daemon for your Mac.**
+*Formerly Domovoi.*
 
-The domovoi is the Slavic hearth spirit that lives in the home and keeps it running. This one tends your machine: iMessage and Contacts today, Notes, Reminders, Notifications and more as they land.
+**iMessage and Contacts for your agent, on your Mac.**
+
+Reads and searches your iMessage history, resolves handles to people, and sends a message.
 
 <br/>
 
@@ -16,7 +18,7 @@ The domovoi is the Slavic hearth spirit that lives in the home and keeps it runn
 
 ---
 
-Domovoi is a local Model Context Protocol server for the native side of your Mac. It reads the on-disk stores directly (read only) and acts through AppleScript, so an assistant can read and search your iMessage history, resolve handles to the people behind them, and send a message. Built for personal use, shared openly, not productised.
+iMessage MCP is a local Model Context Protocol server for the native side of your Mac. It reads the on-disk stores directly (read only) and acts through AppleScript, so an assistant can read and search your iMessage history, resolve handles to the people behind them, and send a message. Built for personal use, shared openly, not productised.
 
 Runs entirely on your machine. Nothing leaves the Mac.
 
@@ -40,8 +42,8 @@ Runs entirely on your machine. Nothing leaves the Mac.
 ## Install
 
 ```bash
-git clone https://github.com/hello-emrah/domovoi-mcp.git
-cd domovoi-mcp
+git clone https://github.com/hello-emrah/imessage-mcp.git
+cd imessage-mcp
 npm install
 ```
 
@@ -52,9 +54,9 @@ Add to your MCP config (`~/.claude.json` or Claude Desktop config):
 ```json
 {
   "mcpServers": {
-    "domovoi": {
+    "imessage": {
       "command": "node",
-      "args": ["/absolute/path/to/domovoi-mcp/index.js"]
+      "args": ["/absolute/path/to/imessage-mcp/index.js"]
     }
   }
 }
@@ -66,10 +68,6 @@ No environment variables, no keys. Access is governed entirely by the macOS perm
 
 - All reads are read only against copies of Apple's stores; the server never writes to them.
 - Modular by design. Each surface is its own file under `src/`; new ones (notes, reminders, notifications, shortcuts, system info) register in `index.js` without touching the rest.
-
-## Why "Domovoi"
-
-The domovoi is the Slavic house spirit, the guardian that lives in the home and keeps it running: fed, respected, tending the hearth out of sight while the household sleeps. It is the same idea the word daemon carries in computing, the quiet process that keeps a machine in order without ever asking for attention. This one tends your Mac.
 
 ## Design philosophy
 
